@@ -1,0 +1,17 @@
+#blip-chat-open-iframe:not(.opened)::after{
+  content:'Hola! Soy tu asistente virtual';
+  position:absolute;
+    top: -70px;
+    right: 2%;
+  width:200px;
+  height:40px;
+  background: #E9E9E9;
+  color:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+    padding:20%;
+    font-family: sans-serif;
+    font-size: 14px;
+    border-radius: 20px;
+}
