@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-
-    <script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
+  </head>
+  <body>
+    <script
+      src="https://unpkg.com/blip-chat-widget"
+      type="text/javascript"
+    ></script>
     <script>
-        
-        var customStyle = `
-        #blip-chat-open-iframe:not(.opened)::after{
-  content:'Hola! Soy tu asistente virtual';
-  position:absolute;
-    top: -70px;
-    right: 2%;
-  width:200px;
-  height:40px;
-  background: #E9E9E9;
-  color:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-    padding:20%;
-    font-family: sans-serif;
-    font-size: 14px;
-    border-radius: 20px;
-}
-        `;
-        (function () {
-    window.onload = function () {
-        new BlipChat()
-            .withAppKey('Y2VsdWxhOmYwNmFkY2U2LWRhODMtNGM4YS05Njg1LTQzZWQ2NzU5NmJhMQ==')
-            .withButton({"color":"#0096fa","icon":""})
-            .withCustomStyle(styleSheet)
+      (function () {
+        window.onload = function () {
+          var customStyle = `
+            #blip-chat-open-iframe:not(.opened)::after{
+            content:'Hola! Soy tu asistente virtual';
+            position:absolute;
+            top: -70px;
+            right: 2%;
+            width:200px;
+            height:40px;
+            background: #E9E9E9;
+            color:#000;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:20%;
+            font-family: sans-serif;
+            font-size: 14px;
+            border-radius: 20px;
+            }`;
+
+          new BlipChat()
+            .withAppKey(
+              "Y2VsdWxhOmYwNmFkY2U2LWRhODMtNGM4YS05Njg1LTQzZWQ2NzU5NmJhMQ=="
+            )
+            .withButton({ color: "#0096fa", icon: "" })
+            .withCustomStyle(customStyle)
             .build();
-    }
-})();
+        };
+      })();
     </script>
-</body>
-</html>        
+  </body>
+</html>
+
