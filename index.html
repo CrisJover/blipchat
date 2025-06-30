@@ -38,6 +38,10 @@
             )
             .withButton({ color: "#0096fa", icon: "" })
             .withCustomCommonUrl('https://squad-proxima-centauri.chat.blip.ai/')
+            .sendMessage({
+                "type": "text/plain",
+                "content": "This is my first message"
+            })
             .withCustomStyle(customStyle)
             .build();
         };
