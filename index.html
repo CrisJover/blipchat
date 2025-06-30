@@ -32,19 +32,25 @@
             border-radius: 20px;
             }`;
 
-          new BlipChat()
+         var blipClient = new BlipChat()
             .withAppKey(
               "Y2VsdWxhOmYwNmFkY2U2LWRhODMtNGM4YS05Njg1LTQzZWQ2NzU5NmJhMQ=="
             )
             .withButton({ color: "#0096fa", icon: "" })
+            .withEventHandler(BlipChat.CREATE_ACCOUNT_EVENT, function () {
+              blipClient.sendMessage({
+                  "type": "text/plain",
+                  "content": "Start"
+              });
+             })
+         .withCustomStyle(customStyle)
             .withCustomCommonUrl('https://squad-proxima-centauri.chat.blip.ai/')
-            .sendMessage({
-                "type": "text/plain",
-                "content": "This is my first message"
-            })
-            .withCustomStyle(customStyle)
-            .build();
+         
+         blipClient.build();
+          
+          
         };
+        
       })();
     </script>
   </body>
